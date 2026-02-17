@@ -1,0 +1,505 @@
+/* to do 
+    -revoir agencement pros/cons, et pad/marg listes
+ */
+:root {
+    --scroll-padding:60px;
+    --li-brd-bot-hgt: 10px;
+    --ext-link-cl: hsl(200 100% 50%);
+    --ext-link-hv-cl: hsl(200 72% 43%);
+    --primary-cl: hsl(210 39% 52%); 
+    --secondary-cl: chocolate; 
+    --third-cl: hsl(190 48% 65%); 
+    --fourth-cl: hsl(187 51% 82%);
+    --fith-cl: hsl(188 40% 52%);
+    --buttons-cl: hsl(25deg 89.44% 54.36%); /* or hsl(30, 50%, 50%) */
+    --btn-ft-cl: wheat;
+    --txt-shade-cl:  hsl(0 15% 26%);
+    --txt-shade: 1px 1px 2px var(--txt-shade-cl);
+ }
+
+* {
+    /* box-sizing: border-box; */
+}
+
+/* Polices ******************************************** */
+@font-face {
+    font-family: 'Chivo';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: fallback;
+    src: url(./fonts/Chivo/Chivo-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Chivo';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: fallback;
+    src: url(./fonts/Chivo/Chivo-Italic-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 200 800;
+    font-display: swap;
+    src: url(./fonts/Karla/static/Karla-Medium.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Karla';
+    font-style: italic;
+    font-weight: 200 800;
+    font-display: fallback;
+    src: url(./fonts/Karla/Karla-Italic-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Petrona';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(./fonts/Petrona/Petrona-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Petrona';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: fallback;
+    src: url(./fonts/Petrona/Petrona-Italic-VariableFont_wght.ttf) format('truetype');
+}
+/* ****************************************** */
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding);
+}
+
+body {
+    font: 1.25rem 'Karla', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    background-color: var(--fourth-cl);
+    /* color: var(--primary-cl); */
+}
+
+header h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    text-align: center;
+    height: var(--scroll-padding);
+    background-color: var(--primary-cl);
+    margin: 0;
+    padding: 24px;
+    color: var(--fourth-cl);
+}
+
+h1, h2, h3 {
+    font-family: 'Petrona', serif;
+    /* margin: 0 0 16px; */
+    
+}
+h2 {
+    color: var(--buttons-cl);
+    text-shadow: 1px 1px 1px beige;
+}
+
+h4 {
+    font-family: 'Chivo', serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Déco arrière-plan ******************** */
+section {
+    position: relative;
+}
+
+.layout {
+    background-color: var(--fith-cl);
+    position: absolute;
+    z-index: -1;
+}
+
+.ball {
+    
+    border-radius: 50%;
+}
+
+.dark {
+    background-color: var(--primary-cl);
+}
+
+#a {
+    top: -60px;
+    left: -60px;
+    padding: 130px 170px;
+    background-color: var(--third-cl);
+    border-radius: 0 0 7px 0;
+}
+
+#b {
+    top: 60%;
+    left:80%;
+    padding: 95px;
+}
+
+#c {
+    top: -20px;
+    left: -110px;
+    padding: 40px 440px 60px 200px;
+    border-radius: 0 7px 0 0;
+}
+
+#d {
+    top: -50px;
+    left: -60px;
+    padding: 95px;
+
+}
+/* ************************************** */
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#introduction {
+    padding-bottom: 48px;
+}
+
+#introduction p, .enbref-wrapper {
+      width: 70%;
+      margin: 0 auto 64px;
+}
+
+.article {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100px 2fr 2fr;
+    margin-bottom: 60px;
+}
+
+hr {
+    margin-bottom: 60px;
+}
+
+.small-hr {
+    width: 50%;
+}
+
+/* Titres IDE sticky ****************************/
+main {
+    padding-top:var(--scroll-padding);
+}
+
+.sticky {
+    position: sticky;
+    top: calc(var(--scroll-padding) + 16px);
+    font-family: 'Chivo';
+    font-size: 1.1rem;
+    height: 70px;
+    width: fit-content;
+    border-radius: 8px 15px;
+    padding: 3px 16px;
+    margin-bottom: 60px;
+    color: var(--btn-ft-cl);
+    background-color: var(--buttons-cl);
+    text-shadow: var(--txt-shade);
+    align-content: center;
+}
+
+/* Nav ******************************************* */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    font-style: italic;
+    padding: 0;
+    filter: drop-shadow(0px 9px 5px hsl(51 7% 2% / 0.3));
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    background-color: hsl(0 0% 94%);
+    padding: 0;
+    margin: 0;
+}
+
+.menu li:first-of-type {
+    width: 0;
+    pointer-events: none;
+}
+
+.menu li {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-weight: bold;
+    border-right: solid 10px transparent;
+    border-bottom: solid transparent var(--li-brd-bot-hgt);
+    position: relative;
+    top: 10px;
+}
+
+.menu li:hover {
+    background-color: var(--buttons-cl);
+    /* color: white; */
+    border-bottom: solid var(--buttons-cl) 10px;
+}
+
+.menu li:has(+ .bord:hover) {
+    border-right: solid 10px var(--buttons-cl);
+}
+
+.menu li:hover a {
+    color: var(--btn-ft-cl);
+    text-shadow: var(--txt-shade);
+    transition: 200ms;
+}
+
+.menu li:active {
+    background-color: var(--secondary-cl);
+    border-bottom: solid var(--secondary-cl) 10px;
+}
+.menu li:has(+ .bord:active) {
+    border-right: solid 10px var(--secondary-cl);
+}
+
+/* ******************************************* */
+
+li a {
+    text-decoration: none;
+    color: black;
+    pointer-events: all;
+    padding: 10px 10px 10px 44px;
+}
+
+/* Aside ******************************************* */
+aside {
+    padding: 20px;
+    background-color: hsl(0, 0%, 94%);
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow:  1px 1px 4px black;
+    min-width: 350px;
+    font-size: 1.2rem;
+}
+
+aside ol li {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+aside ol p {
+    margin-top: 10px;
+}
+
+aside ol li h3, aside ol li h4 {
+    display: inline;
+}
+
+aside ul li {
+    margin: 0;
+}
+
+/* Numérotation liste imbriquées ***********************/
+aside ol:not(ul) {
+    counter-reset: section;
+    list-style-type: none;
+    padding-inline-start: 16px;
+}
+
+aside ol li:not(ul li)::before {
+    counter-increment: section;
+    content: counters(section, ".") ". ";
+}
+
+/* Zoom pour images interface IDE ********************* */
+.img-wrapper {
+    position: relative;
+    min-width: 350px;
+    perspective: 800px;
+}
+
+.zoom{
+    border: inset 2px grey;
+    border-radius: 7px;
+    width: 100%;
+    transition: 300ms;
+    transform-style: preserve-3d;
+}
+
+.zoom:hover {
+    cursor: zoom-in;
+    box-shadow: 3px 3px 8px grey;
+    transition: 250ms;
+    transform: rotateX(-5deg);
+}
+
+.zoom:active {
+    position: relative;
+    z-index: 3;
+    box-shadow: 
+        3px 3px 30px hsl(0, 6%, 9%),
+        3px 3px 30px hsl(0, 0%, 50%),
+        3px 3px 20px hsl(0, 0%, 100%);
+    transform: translate(50%,-25%) scale(1.7);
+    transition: 200ms;
+}
+
+.img-wrapper:has(.zoom:active){
+    z-index: 3;
+}
+
+/* Logo **************************************** */
+.logo {
+    margin: 0 auto 128px;
+    display: block;
+}
+
+/* ********************************************* */
+
+figcaption {
+    font-family: 'Chivo';
+    font-style: italic;
+    font-weight: 100;
+    font-size: 1.2rem;
+    padding: 8px 0;
+    
+}
+
+a[target] {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: var(--ext-link-cl);
+    padding: 12px 0;
+    transition: 500ms;
+}
+
+a[target]:hover {
+    color: var(--ext-link-hv-cl);
+    background-color: hsl(204 33% 94% / 0.9);
+    text-shadow: 2px 1px 1px white;
+    border-radius: 0 0 7px 7px;
+    transition: 200ms;
+}
+
+/* Tableau ********************************************/
+ table {
+      /* width: 70%; */
+      border-collapse: collapse;
+      font-family: 'Karla', sans-serif;
+      margin-bottom: 64px;
+    }
+
+    th, td {
+      border: 1px solid hsl(0, 0%, 87%);
+      padding: 12px;
+      vertical-align: top;
+    }
+
+    tr:has(th:hover, td:hover) {
+        background-color: hsl(0 0% 50% / 0.3);
+    }
+
+    th {
+      background-color: hsl(0, 0%, 96%);
+      font-family: 'Petrona';
+      font-weight: 600;
+      color: black;
+      text-shadow: none;
+
+    }
+
+    tr:nth-child(even) {
+        background-color: hsl(187 51% 93%);
+        /* color: var(--btn-ft-cl); */
+    }
+    
+    tr:nth-child(odd) {
+        background-color: hsl(0, 0%, 98%);
+        /* color: var(--txt-shade-cl); */
+    }
+
+    #blank-cell {
+    border: none;
+    background-color: var(--fith-cl);
+    }
+
+/* Footer **************************************** */
+footer {
+    background-color: var(--primary-cl);
+    padding: 48px 0;
+
+}
+footer p {
+    text-align: center;
+}
+
+/* Animation lettres tournantes */
+@keyframes turning {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}
+
+.turning {
+    display: inline-block;
+    animation: forwards ease-in-out normal 6000ms turning infinite;  
+}
+
+@keyframes reverse-turning {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-360deg);
+    }
+    100% {
+        transform: rotate(-360deg); 
+    }
+}
+
+.reverse-turning {
+    display: inline-block;
+    animation: forwards ease-in-out normal 6000ms 1500ms reverse-turning infinite;  
+}
+
+
+ /* Boutton flottant ***********************************/
+ .button-wrapper {
+    width: 60px;
+    cursor: pointer;
+    opacity: 0.3;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    padding: 0;
+    margin: 0;
+    border: dotted 2px goldenrod;
+    border-radius: 7px;
+    overflow: clip;
+    box-shadow: 0 0 3pt 2pt hsl(225 3% 73%);
+    transition: 700ms;
+}
+.button-wrapper img {
+    width: 100%;
+    margin: 0;
+}
+
+.button-wrapper:hover {
+    opacity: 1;
+    border:  solid 2px transparent;
+    box-shadow: 0 0 3pt 2pt hsl(225 3% 73%);
+    transition: 250ms;
+}
+.button {
+    text-decoration: none;
+}
